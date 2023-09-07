@@ -3,11 +3,11 @@ import pandas as pd
 from sklearn.decomposition import PCA
 
 
-def pca_timeseries(data, num_componenets):
-    pca = PCA(n_components=num_componenets)
+def pca_timeseries(data, num_components):
+    pca = PCA(n_components=num_components)
     pca.fit(data)
     dfpca = pca.transform(data)
-    return pca, pd.DataFrame(dfpca, columns=['ts'+str(i+1) for i in range(num_componenets)])
+    return pca, pd.DataFrame(dfpca, columns=['ts'+str(i+1) for i in range(num_components)])
 
 
 def remove_nulldata(x_data, y_data):
